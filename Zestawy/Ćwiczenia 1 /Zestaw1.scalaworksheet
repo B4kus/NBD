@@ -1,0 +1,129 @@
+import scala.collection.mutable.ListBuffer
+
+val dayOfTheWeeK: List[String] = List("Poniedzialek", "Wtorek", "Sroda", "Czwartek", "Piatek", "Sobota", "Niedziela")
+
+//Zadanie 1A
+def printDayOfTheWeek(daysOfTheWeek: List[String]) {
+  var longString: String = ""
+  for (i <- 0 until daysOfTheWeek.length ) {
+    longString += daysOfTheWeek(i)
+    if(i!= dayOfTheWeeK.length - 1) longString += ", "
+  }
+  println("Zadanie 1A: " + longString)
+}
+printDayOfTheWeek(dayOfTheWeeK)
+
+//Zadanie 1B
+def printDayOfTheWeekStartingWithP(daysOfTheWeek: List[String]) {
+  var longString: String = ""
+  for (i <- 0 until daysOfTheWeek.length ) {
+    if (daysOfTheWeek(i).startsWith("P")) {
+      longString += daysOfTheWeek(i)
+      if (i != dayOfTheWeeK.length - 1) longString += ", "
+    }
+  }
+  println("Zadanie 1B: " + longString)
+}
+printDayOfTheWeekStartingWithP(dayOfTheWeeK)
+
+//Zadanie 1C
+def printDayOfTheWeekWhile(daysOfTheWeek: List[String]) {
+  var longString: String = ""
+  var i: Int = 0
+  while (i < daysOfTheWeek.length) {
+    longString += daysOfTheWeek(i)
+    if(i!= dayOfTheWeeK.length - 1) longString += ", "
+    i+=1
+  }
+  println("Zadanie 1C: " + longString)
+}
+printDayOfTheWeekWhile(dayOfTheWeeK)
+
+//Zadanie 2A
+def printDayOfTheWeekRecursively(daysOfTheWeek: List[String]): String = {
+  if (daysOfTheWeek.isEmpty)
+    return ""
+  else
+    return daysOfTheWeek.head + ", " + printDayOfTheWeekRecursively(daysOfTheWeek.tail)
+}
+println("Zadanie 2A: " + printDayOfTheWeekRecursively(dayOfTheWeeK))
+
+//Zadanie 2B
+def printDayOfTheWeekRecursivelyFromBack(daysOfTheWeek: List[String]): String = {
+  if (daysOfTheWeek.isEmpty)
+    return ""
+  else
+    return printDayOfTheWeekRecursivelyFromBack(daysOfTheWeek.tail) + "," +daysOfTheWeek.head
+}
+println("Zadanie 2B: " + printDayOfTheWeekRecursivelyFromBack(dayOfTheWeeK))
+
+//Zadanie 3
+
+def printDayOfTheWeekRecursivelyTail(daysOfTheWeek: List[String], str: String): String = {
+  if (daysOfTheWeek.isEmpty)
+    return ""
+  if (daysOfTheWeek.length == 1)
+    str + daysOfTheWeek.head
+  else
+    printDayOfTheWeekRecursivelyTail(daysOfTheWeek.tail, str + daysOfTheWeek.head + ",")
+}
+println("Zadanie 3: " + printDayOfTheWeekRecursivelyTail(dayOfTheWeeK, ""))
+
+//Zadanie 4A
+dayOfTheWeeK.foldLeft("")((newString, day) => newString + day + "," )
+
+//Zadanie 4B
+dayOfTheWeeK.foldRight("")((newString, day) => newString + "," + day )
+
+//Zadanie 4C
+dayOfTheWeeK.foldLeft("")((newString, day) => if (day.startsWith("P")) newString + day + "," else newString)
+
+//Zadanie 5
+val productMap: Map[String, Double] = Map("iPhone" -> 500.0, "MacBook" -> 2000.0, "MacMini" -> 1500.0)
+val discountedProductMap = productMap.map { case (product, price) => (product, price * 0.90) }
+println(discountedProductMap)
+
+//Zadanie 6
+def printDifferentTupleValues(tuple:(String, Int, Double)) {
+  println(tuple._1 + " ")
+  println(tuple._2 + " ")
+  println(tuple._3 + " ")
+}
+printDifferentTupleValues(tuple = ("Szymon", 23, 213.34))
+
+//Zadnie 7
+val colors: Map[String, String] = Map("White" -> "RGB 0.0.0", "Black" -> "RGB 255.255.255", "Green" -> "RGB 0.255.0")
+def optionMap(x: Option[String]) = x match {
+  case Some(s) => s
+  case None => "?"
+}
+println(optionMap(colors.get("White")))
+println(optionMap(colors.get("Apple Watch")))
+
+//Zadanie 8
+
+def filterZeros(array: List[Int]): List[Int] = {
+  var tempArray = new ListBuffer[Int]()
+  array.foreach { element => if (element != 0) tempArray += element }
+  return array.filter(l => l != 0)
+}
+filterZeros(List(-123,-32,-2,3,7,9,10,11,100))
+
+//Zadanie 9
+def mapArray(arrayOfNumbers: List[Int]) {
+  println(arrayOfNumbers.map(x => x + 1))
+}
+mapArray(List(2,3,7,9,10,11))
+
+//Zadanie 10
+
+def filterABSValue(listOfNumbers: List[Double]) {
+  val newList = listOfNumbers
+    .filter( _> -5 )
+    .filter( _ < 12)
+    .map( _.abs )
+  println(newList)
+}
+filterABSValue(List(-123,-32,-2,3,7,9,10,11,100))
+
+
