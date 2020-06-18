@@ -1,0 +1,36 @@
+
+*   Trying 127.0.0.1...
+* Connected to localhost (127.0.0.1) port 8098 (#1)
+> POST /buckets/s20531/keys/nata?returnbody=true HTTP/1.1
+> User-Agent: curl/7.38.0
+> Host: localhost:8098
+> Accept: */*
+> Content-Type: application/json
+> Content-Length: 79
+> 
+* upload completely sent off: 79 out of 79 bytes
+< HTTP/1.1 200 OK
+HTTP/1.1 200 OK
+< X-Riak-Vclock: a85hYGBgzGDKBVI8ypz/fsYkFvUwMPgpZjAlMuWxMizQTLjBlwUA
+X-Riak-Vclock: a85hYGBgzGDKBVI8ypz/fsYkFvUwMPgpZjAlMuWxMizQTLjBlwUA
+< Vary: Accept-Encoding
+Vary: Accept-Encoding
+* Server MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho) is not blacklisted
+< Server: MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho)
+Server: MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho)
+< Link: </buckets/s20531>; rel="up"
+Link: </buckets/s20531>; rel="up"
+< Last-Modified: Thu, 18 Jun 2020 18:08:32 GMT
+Last-Modified: Thu, 18 Jun 2020 18:08:32 GMT
+< ETag: "1YQn5YMWvWebUvR6iwgmos"
+ETag: "1YQn5YMWvWebUvR6iwgmos"
+< Date: Thu, 18 Jun 2020 18:08:32 GMT
+Date: Thu, 18 Jun 2020 18:08:32 GMT
+< Content-Type: application/json
+Content-Type: application/json
+< Content-Length: 79
+Content-Length: 79
+
+< 
+* Connection #1 to host localhost left intact
+{"name": "Nata", "nationality": "DE", "sex": "female", "age": 42, "year": 1111}

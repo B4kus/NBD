@@ -1,0 +1,22 @@
+*   Trying 127.0.0.1...
+* Connected to localhost (127.0.0.1) port 8098 (#0)
+> GET /buckets/s20531/keys/buck HTTP/1.1
+> User-Agent: curl/7.38.0
+> Host: localhost:8098
+> Accept: */*
+> 
+< HTTP/1.1 404 Object Not Found
+HTTP/1.1 404 Object Not Found
+* Server MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho) is not blacklisted
+< Server: MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho)
+Server: MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho)
+< Date: Thu, 18 Jun 2020 18:20:12 GMT
+Date: Thu, 18 Jun 2020 18:20:12 GMT
+< Content-Type: text/plain
+Content-Type: text/plain
+< Content-Length: 10
+Content-Length: 10
+
+< 
+not found
+* Connection #0 to host localhost left intact

@@ -1,0 +1,32 @@
+*   Trying 127.0.0.1...
+* Connected to localhost (127.0.0.1) port 8098 (#0)
+> GET /buckets/s20531/keys/buck HTTP/1.1
+> User-Agent: curl/7.38.0
+> Host: localhost:8098
+> Accept: */*
+> 
+< HTTP/1.1 200 OK
+HTTP/1.1 200 OK
+< X-Riak-Vclock: a85hYGBgzGDKBVI8ypz/fsYkS3IzMPgpZTAlMuaxMvBwJdzgywIA
+X-Riak-Vclock: a85hYGBgzGDKBVI8ypz/fsYkS3IzMPgpZTAlMuaxMvBwJdzgywIA
+< Vary: Accept-Encoding
+Vary: Accept-Encoding
+* Server MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho) is not blacklisted
+< Server: MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho)
+Server: MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho)
+< Link: </buckets/s20531>; rel="up"
+Link: </buckets/s20531>; rel="up"
+< Last-Modified: Thu, 18 Jun 2020 15:53:48 GMT
+Last-Modified: Thu, 18 Jun 2020 15:53:48 GMT
+< ETag: "7kvJQdjTzMzs3DTvKVIvZe"
+ETag: "7kvJQdjTzMzs3DTvKVIvZe"
+< Date: Thu, 18 Jun 2020 17:55:03 GMT
+Date: Thu, 18 Jun 2020 17:55:03 GMT
+< Content-Type: application/json
+Content-Type: application/json
+< Content-Length: 64
+Content-Length: 64
+
+< 
+* Connection #0 to host localhost left intact
+{"name": "Buck", "nationality": "USA", "sex": "male", "age": 72}

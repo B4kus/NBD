@@ -1,0 +1,44 @@
+* Rebuilt URL to: –XPUT/
+* Input domain encoded as `UTF-8'
+* Hostname was NOT found in DNS cache
+* Could not resolve host: xn--xput-z86a
+* Closing connection 0
+curl: (6) Could not resolve host: xn--xput-z86a
+* Hostname was NOT found in DNS cache
+*   Trying 127.0.0.1...
+* Connected to localhost (127.0.0.1) port 8098 (#1)
+> POST /buckets/s20531/keys?returnbody=true HTTP/1.1
+> User-Agent: curl/7.38.0
+> Host: localhost:8098
+> Accept: */*
+> Content-Type: application/json
+> Content-Length: 65
+> 
+* upload completely sent off: 65 out of 65 bytes
+< HTTP/1.1 201 Created
+HTTP/1.1 201 Created
+< X-Riak-Vclock: a85hYGBgzGDKBVI8ypz/fsaEu4QzMPgpZjAlMuaxMizSTbjBlwUA
+X-Riak-Vclock: a85hYGBgzGDKBVI8ypz/fsaEu4QzMPgpZjAlMuaxMizSTbjBlwUA
+< Vary: Accept-Encoding
+Vary: Accept-Encoding
+* Server MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho) is not blacklisted
+< Server: MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho)
+Server: MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho)
+< Location: /buckets/s20531/keys/3j6qMlZ0UfHnyYyJ44XKv5nnaiJ
+Location: /buckets/s20531/keys/3j6qMlZ0UfHnyYyJ44XKv5nnaiJ
+< Link: </buckets/s20531>; rel="up"
+Link: </buckets/s20531>; rel="up"
+< Last-Modified: Thu, 18 Jun 2020 18:25:38 GMT
+Last-Modified: Thu, 18 Jun 2020 18:25:38 GMT
+< ETag: "4Lo0fAWWDshiWBTpguFH9p"
+ETag: "4Lo0fAWWDshiWBTpguFH9p"
+< Date: Thu, 18 Jun 2020 18:25:38 GMT
+Date: Thu, 18 Jun 2020 18:25:38 GMT
+< Content-Type: application/json
+Content-Type: application/json
+< Content-Length: 65
+Content-Length: 65
+
+< 
+* Connection #1 to host localhost left intact
+{"name": "Gabi", "nationality": "UK", "sex": "female", "age": 25}

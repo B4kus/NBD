@@ -1,0 +1,67 @@
+Zadanie 1
+
+curl -v -i –XPUT -H "Content-Type: application/json" \
+-d '{"name": "Szymon", "nationality": "PL", "sex": "male", "age": 23}' \
+http://localhost:8098/buckets/s20531/keys/szymon?returnbody=true\
+
+curl -v -i –XPUT -H "Content-Type: application/json" \
+-d '{"name": "Buck", "nationality": "USA", "sex": "male", "age": 72}' \
+http://localhost:8098/buckets/s20531/keys/buck?returnbody=true 
+
+curl -v -i –XPUT -H "Content-Type: application/json" \
+-d '{"name": "Anna", "nationality": "UK", "sex": "female", "age": 22}' \
+http://localhost:8098/buckets/s20531/keys/anna?returnbody=true
+
+curl -v -i –XPUT -H "Content-Type: application/json" \
+-d '{"name": "Tom", "nationality": "FR", "sex": "male", "age": 10}' \
+http://localhost:8098/buckets/s20531/keys/tom?returnbody=true
+
+curl -v -i –XPUT -H "Content-Type: application/json" \
+-d '{"name": "Nata", "nationality": "DE", "sex": "female", "age": 42}' \
+http://localhost:8098/buckets/s20531/keys/nata?returnbody=true
+
+Zadanie 2
+
+curl -v -i http://localhost:8098/buckets/s20531/keys/buck
+
+Zadanie 3
+
+curl -v -i –XPUT -H "Content-Type: application/json" \
+-d '{"name": "Nata", "nationality": "DE", "sex": "female", "age": 42, "year": 1111}' \
+http://localhost:8098/buckets/s20531/keys/nata?returnbody=true
+
+Zadanie 4
+
+curl -v -i –XPUT -H "Content-Type: application/json" \
+-d '{"name": "Tom", "nationality": "FR", "sex": "male"}' \
+http://localhost:8098/buckets/s20531/keys/tom?returnbody=true
+
+Zadanie 5
+
+curl -v -i –XPUT -H "Content-Type: application/json" \
+-d '{"name": "Anna", "nationality": "FR", "sex": "female", "age": 22}' \
+http://localhost:8098/buckets/s20531/keys/anna?returnbody=true
+
+Zadanie 6
+
+curl -v -i -XDELETE \
+http://localhost:8098/buckets/s20531/keys/buck
+
+Zadanie 7
+
+curl -v -i http://localhost:8098/buckets/s20531/keys/buck
+
+Zadanie 8
+
+curl -v -i –XPUT -H "Content-Type: application/json" \
+-d '{"name": "Gabi", "nationality": "UK", "sex": "female", "age": 25}' \
+http://localhost:8098/buckets/s20531/keys?returnbody=true
+
+Zadanie 9
+
+curl -v -i http://localhost:8098/buckets/s20531/keys/3j6qMlZ0UfHnyYyJ44XKv5nnaiJ
+
+
+Zadanie 10
+
+curl -v -i -XDELETE http://localhost:8098/buckets/s20531/keys/3j6qMlZ0UfHnyYyJ44XKv5nnaiJ
