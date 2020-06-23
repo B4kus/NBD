@@ -1,0 +1,27 @@
+1. MATCH a = allShortestPaths((d {name: 'Darjeeling'})-[p *]->(s {name: 'Sandakphu'})) RETURN a
+2. MATCH (d { name: 'Darjeeling' }),(s { name: 'Sandakphu' }), paths = allShortestPaths((d)-[*]-(s)) WHERE ALL (p IN relationships(paths) WHERE p.winter = "true") RETURN paths
+3. 
+
+4. MATCH (f0)-[o:ORIGIN]->(a:Airport) return a, count(o) order by count(o) desc
+
+// pomocnicze krawedzie
+match (x)<-[:ORIGIN]-(f)-[:DESTINATION]->(y:Airport)
+match (f) <-- (t:Ticket) with x, y, max(t.price) as lowestPrice, id(f) as flightId
+merge (x)-[:FLIGHT{price:lowestPrice, flight_id: flightId}]->(y);
+
+match (x)<-[:ORIGIN]-(f)-[:DESTINATION]->(y:Airport)
+match (f) <-- (t:Ticket) 
+merge (x)-[fl:FLIGHT{price:t.price, flight_id: id(f)}]->(y);
+
+5. MATCH p=(la: Airport{name:"LAX"})-[:FLIGHT*..4]->(x: Airport) WITH reduce(total=0, f in relationships(p) | total +f.price) as total_price, p where total_price <= 3000 RETURN distinct(last(nodes(p))); 
+6. MATCH p=(la: Airport{name:"LAX"})-[:FLIGHT*..4]->(x: Airport{name: "DAY"}) WITH reduce(total=0, f in relationships(p) | total +f.price) as total_price, p  RETURN p order by total_price;
+7. MATCH p=(la: Airport{name:"LAX"})-[:FLIGHT*..4]->(x: Airport{name: "DAY"}) WITH reduce(total=0, f in relationships(p) | total +f.price) as total_price, p  RETURN p order by total_price limit 1
+
+// pomocnicze krawedzie
+match (la)<-[:ORIGIN]-(f)-[:DESTINATION]->(x:Airport)
+match (f) <-- (t:Ticket{class:"business"}) 
+merge (la)-[fl:BUSINESS_FLIGHT{price:t.price, flight_id: id(f)}]->(x);
+
+8. MATCH p=(la: Airport{name:"LAX"})-[r:BUSINESS_FLIGHT*..4]->(x: Airport{name: "DAY"}) WITH reduce(total=0, f in relationships(p) | total +f.price) as total_price, p  RETURN p order by total_price limit 1;
+9. MATCH (o:Airport)-[:ORIGIN]-(f:Flight)-[:DESTINATION]-(d:Airport) RETURN f.airline, count(o) AS count ORDER BY count DESC
+10.
